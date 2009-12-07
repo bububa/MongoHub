@@ -1,0 +1,27 @@
+#appname:MongoHub
+#appid:com.thepeppersstudio.mongohub
+#publisher:prof.syd.xu@gmail.com
+#image:logo.png
+#url:http://syd.todayclose.com
+#guid:2108f4c2-e436-4fe1-a928-3ebd6d52ac62
+#desc:Mongodb GUI Tool
+#type:desktop
+runtime:0.7.0
+api:0.7.0
+tiapp:0.7.0
+tifilesystem:0.7.0
+tiplatform:0.7.0
+tiui:0.7.0
+javascript:0.7.0
+tianalytics:0.7.0
+python:0.7.0
+ticodec:0.7.0
+tidatabase:0.7.0
+tidesktop:0.7.0
+tigrowl:0.7.0
+timedia:0.7.0
+timonkey:0.7.0
+tinetwork:0.7.0
+tinotification:0.7.0
+tiprocess:0.7.0
+tiworker:0.7.0

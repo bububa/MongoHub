@@ -1,0 +1,55 @@
+<html>
+<head>
+    <link rel="stylesheet" href="app://liberary/css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" src="app://liberary/js/prototype-1.6.0.js"></script>
+    <script type="text/javascript" src="app://liberary/js/scriptaculous-1.8.2.js"></script>
+    <script type="text/javascript" src="app://liberary/js/main.js"></script>
+    <script type="text/javascript" src="app://liberary/js/base_window.js"></script>
+    <script type="text/javascript" src="app://liberary/js/connection.js"></script>
+<script type="text/python">
+from mongodb import MongoDB
+window.mongo = MongoDB()
+</script>
+    <script type="text/javascript">
+        window.onload = function(){
+            var chrome = new Chrome();
+            navigatorInit();
+            createMenu();
+            updater();
+        }
+    </script>
+</head>
+<body>
+    <!--<div class="NavigationBar">
+        <ul>
+            <li><a class="Item" title="Connection"><img src="app://liberary/img/dbplus.png"/>Connection</a></li>
+            <li><a class="Item" title="DBs"><img src="app://liberary/img/sqldb.png"/>DBs</a></li>
+            <li><a class="Item" title="Collections"><img src="app://liberary/img/table_48.png"/>Collections</a></li>
+            <li><a class="Item" title="Repair"><img src="app://liberary/img/spanner_48.png"/>Repair</a></li>
+            <li><a class="Item" title="Refresh"><img src="app://liberary/img/refresh_48.png"/>Refresh</a></li>
+            <li><a class="Item" title="Preference"><img src="app://liberary/img/preference.png"/>Preference</a></li>
+            <li><a class="Item" title="Query"><img src="app://liberary/img/search_48.png"/>Query</a></li>
+            <li><a class="Item" title="Export"><img src="app://liberary/img/box_upload_48.png"/>Export</a></li>
+            <li><a class="Item" title="Support"><img src="app://liberary/img/help.png"/>Support</a></li>
+        </ul>
+        <div id="app-status"></div>
+        <div class="clearfix"></div>
+    </div>-->
+    <div id="main-wrapper">
+        <div id="sidebar"></div>
+        <div id="main-content">
+            <div id="menubar" style="display:none">
+                <input type="text" id="query" style="width:200px;color:#666" />
+                <button id="runquerybtn" class="green" style="font-size:11px">Run Query</button>
+                <div class="meta">
+                    Connected to:
+                    <span id="connection_name"></span>
+                    <span id="database_name"></span>
+                </div>
+            </div>
+            <div id="main-innerlist"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</body>
+</html>

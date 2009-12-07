@@ -1,0 +1,35 @@
+<html>
+<head>
+    <link rel="stylesheet" href="app://liberary/css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" src="app://liberary/js/prototype-1.6.0.js"></script>
+    <script type="text/javascript" src="app://liberary/js/scriptaculous-1.8.2.js"></script>
+    <script type="text/javascript" src="app://liberary/js/connection.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            $('submit').observe('click', function()
+            {
+               addConnection($F('name'), $F('host'), $F('port')); 
+            });
+            $('cancel').observe('click', function(){
+                Titanium.UI.getCurrentWindow().close();
+            });
+        }
+    </script>
+</head>
+<body class="AddConnectionDialog">
+    <fieldset>
+        <legend>Connection Name</legend>
+        <label for="name">Name</label><input type="text" id="name"/>
+    </fieldset>
+    <fieldset>
+        <legend>Connection Setting</legend>
+        <label for="host">Host</label><input type="text" id="host" value="localhost"/>
+        <label for="port">Port</label><input type="text" id="port" class="Port" value="27017"/>
+    </fieldset>
+    <fieldset style="text-align:right;">
+        <div id="err" class="err"></div>
+        <button id="submit" class="blue">Add</button>
+        <button id="cancel" class="blue">Cancel</button>
+    </fieldset>
+</body>
+</html>

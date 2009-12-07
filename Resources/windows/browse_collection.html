@@ -1,0 +1,60 @@
+<html>
+<head>
+    <link rel="stylesheet" href="app://liberary/css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" src="app://liberary/js/prototype-1.6.0.js"></script>
+    <script type="text/javascript" src="app://liberary/js/scriptaculous-1.8.2.js"></script>
+    <script type="text/javascript" src="app://liberary/js/base_window.js"></script>
+    <script type="text/javascript" src="app://liberary/js/connection.js"></script>
+<script type="text/python" src="app://modules/__init__.py"></script>
+<script type="text/python">
+from mongodb import MongoDB
+window.mongo = MongoDB()
+</script>
+    <script type="text/javascript">
+        window.onload = function(){
+            var win = Titanium.UI.getCurrentWindow();
+            document.body.setStyle({height:(win.getHeight() -50)+ 'px'});
+            var tmp = win.getTitle().split('|');
+            var connection_name = tmp[1].strip();
+            var db_name = tmp[2].strip();
+            var collection_name = tmp[3].strip();
+            $('connection_name').update(connection_name);
+            $('db_name').update(db_name);
+            $('collection_name').update(collection_name);
+            browseCollection(connection_name, db_name, collection_name, $F('page'), $F('step'));
+            $('prev-page').observe('click', function(){
+                current_page = parseInt($F('page'));
+                if (current_page > 1)
+                {
+                    $('page').value = current_page - 1;
+                }else{
+                    $('page').value = 1;
+                }
+                browseCollection(connection_name, db_name, collection_name, $F('page'), $F('step'));
+            });
+            $('next-page').observe('click', function(){
+                current_page = parseInt($F('page'));
+                $('page').value = current_page + 1;
+                browseCollection(connection_name, db_name, collection_name, $F('page'), $F('step'));
+            });
+            window.onresize = function (e) {
+                document.body.setStyle({height:(win.getHeight() -50)+ 'px'});
+            }
+        }
+    </script>
+</head>
+<body style="overflow:hidden">
+    <div class="collection-meta">
+        <a id="prev-page" style="padding-left:10px"><img src="app://liberary/img/arrow_left.png" style="border:0;"></a>
+        <input type="text" id="page" style="width:30px" value="1"/>
+        <a id="next-page"><img src="app://liberary/img/arrow_right.png" style="border:0;"></a>
+         Results/Page: <input type="text" id="step" style="width:60px" value="50" />
+         Total: <span id="total">0</span>
+         | Connected to: 
+        <span id="connection_name"></span>
+        <span id="db_name"></span>
+        <span id="collection_name"></span>
+    </div>
+    <div id="entries-list"></div>
+</body>
+</html>

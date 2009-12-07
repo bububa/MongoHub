@@ -1,0 +1,41 @@
+<html>
+<head>
+    <link rel="stylesheet" href="app://liberary/css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" src="app://liberary/js/prototype-1.6.0.js"></script>
+    <script type="text/javascript" src="app://liberary/js/scriptaculous-1.8.2.js"></script>
+    <script type="text/javascript" src="app://liberary/js/base_window.js"></script>
+    <script type="text/javascript" src="app://liberary/js/connection.js"></script>
+<script type="text/python" src="app://modules/__init__.py"></script>
+<script type="text/python">
+from mongodb import MongoDB
+window.mongo = MongoDB()
+</script>
+    <script type="text/javascript">
+        window.onload = function(){
+            var win = Titanium.UI.getCurrentWindow();
+            document.body.setStyle({height:(win.getHeight() -50)+ 'px'});
+            var tmp = win.getTitle().split('|');
+            var connection_name = tmp[1].strip();
+            var db_name = tmp[2].strip();
+            var query = tmp[3].strip();
+            $('connection_name').update(connection_name);
+            $('db_name').update(db_name);
+            $('query').update(query);
+            runQuery(connection_name, db_name, query);
+            window.onresize = function (e) {
+                document.body.setStyle({height:(win.getHeight() -50)+ 'px'});
+            }
+        }
+    </script>
+</head>
+<body style="overflow:hidden">
+    <div id="collection-meta" class="collection-meta" style="display:none">
+         Total: <span id="total">0</span>
+         | Connected to: 
+        <span id="connection_name"></span>
+        <span id="db_name"></span>
+         | Query: <span id="query"></span>
+    </div>
+    <div id="entries-list"></div>
+</body>
+</html>

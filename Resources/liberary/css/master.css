@@ -1,0 +1,408 @@
+/* @group reset css */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	background: transparent none repeat scroll 0 0;
+	border: 0 none;
+	font-size: 100%;
+	margin: 0;
+	outline-color: -moz-use-text-color;
+	outline-style: none;
+	outline-width: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+a {
+    cursor: pointer;
+}
+ol, ul {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: none;
+}
+
+:focus {
+	outline-color: -moz-use-text-color;
+	outline-style: none;
+	outline-width: 0;
+}
+
+ins {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.err {
+    color:red;
+    line-height:1.5em;
+}
+
+.caution {
+    font-size: 14px;
+    color: #333;
+    padding-left:40px;
+    line-height:1.5em;
+    min-height:32px;
+    background: transparent url(app://liberary/img/caut.png) no-repeat scroll left center;
+}
+/* @end */
+
+/*
+
+ @group layout css */
+
+/* start of float and clearfix css */
+
+.fl-left {
+	float: left;
+}
+
+.fl-right {
+	float: right;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-table;
+}
+.clear{
+    clear:both;
+}
+
+/* START */
+body {
+    background-color:1c1c1c;
+    margin:0;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 12px;
+}
+
+.NavigationBar {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    border-bottom:#3F3F3F 1px solid;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#BDBDBD), to(#969696));
+}
+    .NavigationBar ul {
+        margin:3px 10px;
+    }
+    .NavigationBar li {
+        margin: 0 5px;
+        float:left;
+        font-size:10px;
+        color:#333;
+        font-weight:bold;
+    }
+        .NavigationBar a.Item, .NavigationBar a.Item:link {
+            text-align: center;
+            width:60px;
+            display:block;
+            overflow:hidden;
+            text-shadow: 1px 1px 1px #CCC;
+        }
+        .NavigationBar a.Item:hover {
+            color: #000;
+            text-shadow: 1px 1px 1px #999;
+        }
+        .NavigationBar a.Item img {
+            width:32px;
+            height:32px;
+            border:none;
+            display:block;
+            margin:0 9px;
+        }
+    #app-status {
+        -webkit-border-radius:5px;
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFCE3), to(#D2D3B7));
+        border-top:1px #333 solid;
+        border-left:1px #333 solid;
+        border-right:1px #999 solid;
+        border-bottom:1px #999 solid;
+        padding:5px;
+        float:right;
+        margin:3px 10px;
+        min-width: 60px;
+        height:25px;
+        overflow: hidden;
+    }
+        
+    
+#main-wrapper {
+    width: 100%;
+    height:100%;
+}
+
+#sidebar {
+    background-color:#CDD5DD;
+    border-right:1px #999 solid;
+    height:100%;
+    width:200px;
+    overflow:auto;
+    float:left;
+}
+
+    #sidebar ul.connections {
+        margin:10px 0;
+    }
+    #sidebar li.connection {
+        font-size:13px;
+        color:#333;
+        text-shadow: 1px 1px 1px #FFF;
+        cursor: pointer;
+        padding:10px;
+        text-indent:20px;
+        margin:4px 0;
+        line-height:1.5em;
+        background: url(app://liberary/img/db.png) 10px center no-repeat;
+    }
+    #sidebar li.connection.selected {
+        background:none;
+        background-color: #004394;
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0.5)), to(rgba(98,202,227, 0.5)));
+        font-weight:bold;
+        color:#FFF;
+        text-shadow: 1px 1px 1px #333;
+    }
+        #sidebar li.db {
+            font-size:12px;
+            color:#333;
+            text-shadow: 1px 1px 1px #FFF;
+            cursor: pointer;
+            padding:2px 5px;
+            text-indent:35px;
+            margin:2px 10px;
+            line-height:1.5em;
+            background: url(app://liberary/img/sqldb_16.png) 10px center no-repeat;
+        }
+        #sidebar li.db.selected {
+            background: none;
+            -webkit-border-radius:10px;
+            background-color: #004394;
+            background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0.5)), to(rgba(98,202,227, 0.5)));
+            text-indent:20px;
+            font-weight:bold;
+            color:#FFF;
+            text-shadow: 1px 1px 1px #333;
+            -webkit-box-shadow: 0 -1px 1px rgba(0,0,0,0.5);
+        }
+
+#main-content {
+    //background-color:white;
+    height:100%;
+    width: 599px;
+    float:left;
+}
+    #main-innerlist {
+        overflow:auto;
+        height:100%;
+    }
+    #menubar, .collection-meta {
+        width:100%;
+        height:25px;
+        background-image: -webkit-gradient(linear, 0% 40%, 0% 60%, from(#FFF), to(#DEDEDE));
+        border-bottom:1px #000 solid;
+    }
+        #menubar li{
+            padding:0;
+            margin:0;
+            height:100%;
+            float:left;
+        }
+        #menubar a, #menubar a:link {
+            height:100%;
+            cursor:pointer;
+            line-height:25px;
+            padding:0 10px;
+            border-right:1px #666 solid;
+            background-image: -webkit-gradient(linear, 0% 40%, 0% 60%, from(#E6E6E6), to(#BEBEBE));
+            display:block;
+        }
+        #menubar a:hover {
+            background:none;
+            color:white;
+            background-image: -webkit-gradient(linear, 0% 40%, 0% 60%, from(#A4D0FF), to(#0080FF));
+        }
+        #menubar .meta {
+            float:right;
+            height:100%;
+            padding-right:10px;
+            line-height:25px;
+        }
+        #connection_name {
+            color:#333;
+            text-shadow: 1px 1px 1px #FFF;
+        }
+        #database_name {
+            color:#333;
+            text-shadow: 1px 1px 1px #FFF;
+            background-color:#FC6;
+        }
+        
+    .collection-meta {
+        line-height:25px;
+    }
+    
+    ul.collections{
+        margin:10px;
+    }
+    #entries-list {
+        overflow:auto;
+        height:100%;
+    }
+        li.collection, li.entry {
+            -webkit-border-radius:10px;
+            background-color: #666;
+            padding:10px;
+            margin:10px 0;
+            -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.8);
+            clear:both;
+        }
+        li.entry {
+            margin:10px;
+            color:#ccc;
+        }
+        li.collection .name {
+            font-size:14px;
+            font-weight:bold;
+            color:#EFEFEF;
+            text-shadow: 1px 1px 1px #000;
+            margin-bottom:5px;
+        }
+        li.entry table {
+            width:100%;
+        }
+        li.entry tr {
+            border-bottom: 1px #CCC solid;
+        }
+        li.entry td {
+            padding:5px 0;
+        }
+        li.entry .key{
+            font-size:12px;
+            font-weight:bold;
+            color:#EFEFEF;
+            text-shadow: 1px 1px 1px #000;
+            overflow:hidden;
+            width:100px;
+        }
+        li.entry .value{
+            font-size:12px;
+            color:#CCC;
+        }
+body.AddConnectionDialog {
+    background-color:white;
+    overflow:hidden;
+}
+
+body.AddConnectionDialog form {
+    margin:10px;
+}
+
+body.AddConnectionDialog fieldset {
+    border-top:1px solid #ccc;
+    border-left:0;
+    border-bottom:0;
+    border-right:0;
+    padding:6px;
+    margin:0;
+}
+body.AddConnectionDialog legend {
+    text-align:left;
+    color:#ccc;
+    padding:0px 4px 0px 4px;
+    margin-left:20px;
+}
+body.AddConnectionDialog label {
+    color: #999;
+    font-weight: bold;
+    width: 50px;
+    text-align: right;
+    display:block;
+    float:left;
+    margin:4px 4px 0px 0px;
+}
+body.AddConnectionDialog input {
+    float: left;
+    width: 150px;
+    margin:2px 0px 2px 2px;
+    border:1px solid #cccccc;
+    color:#00abdf;
+    -webkit-box-shadow: 0 -1px 1px rgba(0,0,0,0.5);
+    -webkit-border-radius: 5px;
+    padding:3px;
+    height:24px;
+}
+body.AddConnectionDialog input.Port {
+    width:50px;
+}
+body.AddConnectionDialog input.Short {
+    width:100px;
+}
+
+body.AddConnectionDialog p {
+    margin:20px 10px;
+}
+
+button{
+    display: inline-block;
+	padding: 5px 10px 6px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 1;
+	-webkit-border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border:0;
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.2)));
+}
+button.blue {
+	background-color: #0080FF;
+}
+
+button.red {
+	background-color: #e33100;
+}
+
+button.magenta {
+	background-color: #a9014b;
+}
+
+button.orange {
+	background-color: #ff5c00;
+}
+
+button.yellow {
+	background-color: #ffb515;
+}
+
+button.green {
+	background-color: green;
+}
